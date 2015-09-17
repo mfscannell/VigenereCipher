@@ -5,13 +5,30 @@ class VigenereDecoder:
         codedMessage = ''
         keyIndex = 0
         
-        for letter in message:
-            letterAsInt = ord(letter)
+        for messageLetter in message:
+            messageLetterAsInt = ord(messageLetter)
             keyLetterAsInt = ord(self.key[keyIndex])
-            codedLetterAsInt = ((letterAsInt + keyLetterAsInt - 130) % 26) + 65
+            codedLetterAsInt = ((messageLetterAsInt + keyLetterAsInt - 130) % 26) + 65
             codedLetter = chr(codedLetterAsInt)
             codedMessage = codedMessage + codedLetter
             
             keyIndex = keyIndex + 1
             keyIndex = keyIndex % len(self.key)
+            
         return codedMessage
+    
+    def decrypt(self, codedMessage):
+        message = ''
+        keyIndex = 0
+        
+        for codedLetter in codedMessage:
+            codeLetterAsInt = ord(codedLetter)
+            keyLetterAsInt = ord(self.key[keyIndex])
+            messageLetterAsInt = ((codeLetterAsInt - keyLetterAsInt + 130) % 26) + 65
+            messageLetter = chr(messageLetterAsInt)
+            message = message + messageLetter
+            
+            keyIndex = keyIndex + 1
+            keyIndex = keyIndex % len(self.key)
+            
+        return message

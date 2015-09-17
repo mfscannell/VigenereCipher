@@ -17,6 +17,11 @@ class Test(unittest.TestCase):
         vigenereDecoder = VigenereDecoder('AB')
         codedMessage = vigenereDecoder.encrypt('HELLOWORLD')
         self.assertTrue(codedMessage == 'HFLMOXOSLE')
+        
+    def testDecrypt(self):
+        vigenereDecoder = VigenereDecoder('AB')
+        codedMessage = vigenereDecoder.decrypt('HFLMOXOSLE')
+        self.assertTrue(codedMessage == 'HELLOWORLD')
 
 
 if __name__ == "__main__":
