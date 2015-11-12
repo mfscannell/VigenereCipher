@@ -5,7 +5,6 @@ vigenereDecoder = VigenereDecoder(key)
 
 userContinue = True
 
-
 while userContinue:
     message = raw_input('Enter a message:')
     encodedMessage = vigenereDecoder.encrypt(message)

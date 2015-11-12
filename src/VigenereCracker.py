@@ -1,5 +1,3 @@
-
-
 class VigenereCracker:
     key = ''
     keyLength = 2
