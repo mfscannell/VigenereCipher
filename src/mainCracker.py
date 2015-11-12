@@ -1,4 +1,4 @@
-from src.VigenereCracker import VigenereCracker
+from VigenereCracker import VigenereCracker
 
 filePath = raw_input('Enter the location of a dictionary:')
 VigenereCracker.readDictionary(filePath)

@@ -1,4 +1,4 @@
-from src.VigenereDecoder import VigenereDecoder
+from VigenereDecoder import VigenereDecoder
 
 key = raw_input('Enter a key:')
 vigenereDecoder = VigenereDecoder(key)
